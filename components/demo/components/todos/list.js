@@ -8,6 +8,8 @@ export default class TodoList extends Component {
 		super(props);
 	}
 
+	componentDidMount() {}
+
 	render() {
 		return(
 			<div className="todo-list">

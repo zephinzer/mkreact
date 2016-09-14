@@ -37,7 +37,19 @@ DemoTodosAPI.get('/', function(req, res, next) {
 });
 
 DemoTodosAPI.get('/:id', function(req, res, next) {
-	next(new Error('TODO'));
+	var query = DemoTodosModel().prepare(
+		'SELECT id, label, description, datetime(dcreated,"localtime") AS dcreated FROM mkreact_todos WHERE id = ?'
+	);
+	query.get(
+		req.params.id,
+		function(err, data) {
+			if(!!err) {
+				res.json(err);
+			} else {
+				res.json(data);
+			}
+		}
+	);
 });
 
 DemoTodosAPI.put('/:id', function(req, res, next) {
@@ -59,11 +71,10 @@ DemoTodosAPI.put('/:id', function(req, res, next) {
 });
 
 DemoTodosAPI.delete('/:id', function(req, res, next) {
-	
-	var update = DemoTodosModel().prepare(
+	var remove = DemoTodosModel().prepare(
 		'DELETE FROM mkreact_todos WHERE id = ?'
 	);
-	update.run(
+	remove.run(
 		req.params.id,
 		function(err, data, fields) {
 			if(!!err) {

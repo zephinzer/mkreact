@@ -28,7 +28,7 @@ export default class TodoItem extends Component {
 		this.saveTodo = this.saveTodo.bind(this);
 	}
 
-	componentWillMount() { }
+	componentDidMount() { }
 
 	cancelEditTodo() {
 		this.setState({ editing: false });
@@ -117,8 +117,13 @@ export default class TodoItem extends Component {
 	}
 
 	render() {
-		var time = moment(this.props.model.dcreated)
-			.format('dddd, DD MMMM YYYY [at] h:mm a');
+		if(!!this.props.model) {
+			if(!!this.props.model.dcreated) {
+				var time = moment(this.props.model.dcreated)
+					.format('dddd, DD MMMM YYYY [at] h:mm a');
+			}
+		}
+		
 		return (
 			<div className="todo-item">
 				<Card 
@@ -138,9 +143,13 @@ export default class TodoItem extends Component {
 										value={this.state.label}
 									/>
 								);
-							} else {
+							} else if(!!this.props.model && !!this.props.model.label) {
 								return(
 									<h3 style={{margin:'0'}}>{this.props.model.label}</h3>
+								);
+							} else {
+								return(
+									<h3 style={{margin:'0'}}>Unnamed Todo</h3>
 								);
 							}
 						})()}
@@ -160,9 +169,13 @@ export default class TodoItem extends Component {
 										style={{width:'100%'}} 
 									/>
 								);
-							} else {
+							} else if(!!this.props.model && !!this.props.model.description) {
 								return(
 									<div>{this.props.model.description}</div>
+								);
+							} else {
+								return(
+									<div>No description is available.</div>
 								);
 							}
 						})()}
@@ -170,7 +183,17 @@ export default class TodoItem extends Component {
 					<CardText expandable={true}
 						style={{textAlign:'right'}}>
 						<small>
-							{time}
+							{(() => {
+								if(!!time) {
+									return(
+										{time}
+									);
+								} else {
+									return(
+										<i>unknown time</i>
+									)
+								}
+							})()}
 						</small>
 						{(() => {
 							if(this.state.editing) {

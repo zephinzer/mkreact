@@ -18,6 +18,8 @@ export default class TodoCreator extends Component {
 		this.onLabelChange = this.onLabelChange.bind(this);
 	}
 
+	componentDidMount() {}
+
 	createTodo() {
 		console.log('createTodo() called for following data:', this.state);
 		var _this = this;
