@@ -8,8 +8,8 @@ module.exports = function(config) {
 		files: [
 			'./node_modules/babel-polyfill/dist/polyfill.js',
 			'./node_modules/phantomjs-polyfill/bind-polyfill.js',
-			'./components/demo/.spec.js',
-			'./components/demo/tests/*.spec.js'
+			'./components/.spec.js',
+			'./components/demo/specs/*.spec.js'
 		],
 		plugins: [
 			require('karma-webpack'),
@@ -21,13 +21,17 @@ module.exports = function(config) {
 			require('karma-chai-sinon')
 		],
 		preprocessors: {
-			'./components/demo/.spec.js': ['webpack'],
-			'./components/demo/tests/*.spec.js': ['webpack', 'sourcemap']
+			'./components/.spec.js': ['webpack'],
+			'./components/demo/specs/*.spec.js': ['webpack', 'sourcemap']
 		},
 		reporters: ['mocha'],
 		webpack: {
 			module: {
 				loaders: [
+					{
+						test: /\.json$/,
+						loader: 'json-loader'
+					},
 					{
 						test: /\.js$/,
 						exclude: /\/node_modules\//,
