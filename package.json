@@ -4,8 +4,9 @@
   "description": "Starter package for writing an ES6 React app using Material-UI, Redux, Babel, Webpack and Express.",
   "main": "index.js",
   "scripts": {
+	"build": "bin/build",
     "start": "bin/start",
-    "test": "mocha ./components/.spec.js ./components/**/*.spec.js"
+    "test": "bin/test"
   },
   "keywords": [
     "React",
