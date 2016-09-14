@@ -2,7 +2,7 @@ var path = require('path');
 
 const ENTRY 						= './components/app.js';
 const OUTPUT_FILENAME 				= 'master.js';
-const OUTPUT_PATH 					= path.join(__dirname, '/assets');
+const OUTPUT_PATH 					= path.join(__dirname, '/../assets');
 const OUTPUT_PUBLIC_PATH 			= '/assets';
 const MODULE_BABEL_LOADER_PRESETS 	= [
 										'es2015',
