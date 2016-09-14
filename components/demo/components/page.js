@@ -4,7 +4,9 @@ export default class Page extends Component {
 	constructor(props) {
 		super(props);
 	}
-	componentWillMount() { }
+	
+	componentDidMount() { }
+
 	render() {
 		return (
 			<div className="page">

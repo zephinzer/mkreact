@@ -18,7 +18,6 @@ export default class Todos extends Component {
 	}
 
 	componentDidMount() {
-		console.log('componentDidMount');
 		var _this = this;
 		this.unsubscribe = TodoStore.subscribe(() => {
 			var state = TodoStore.getState();
@@ -29,7 +28,6 @@ export default class Todos extends Component {
 		});
 		request.get('/api/demo/todos')
 			.end(function(err, res) {
-				console.log(arguments);
 				if(!err) {
 					TodoStore.dispatch(TodoStoreActions.load(
 						res.body
@@ -43,7 +41,6 @@ export default class Todos extends Component {
 	}
 
 	componentWillUnmount() {
-		console.log('componentWillUnmount');
 		if(!!this.unsubscribe) {
 			this.unsubscribe();
 		}

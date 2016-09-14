@@ -7,8 +7,9 @@ export default class Landing extends Component {
 	constructor(props) {
 		super(props);
 	}
+	
 	componentDidMount() { }
-	componentWillMount() { }
+
 	render() {
 		return (
 			<Page id="landing">

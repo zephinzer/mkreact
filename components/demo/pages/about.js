@@ -7,7 +7,6 @@ export default class About extends Component {
 	}
 
 	componentDidMount() { }
-	componentWillMount() { }
 	
 	render() {
 		return (
