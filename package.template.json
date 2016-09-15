@@ -2,7 +2,7 @@
   "name": "mkreact",
   "version": "1.0.3",
   "description": "Starter package for writing an ES6 React app using Material-UI, Redux, Babel, Webpack and Express.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
 	"make": "bin/make",
 	"build": "bin/build",
