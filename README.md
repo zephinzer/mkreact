@@ -7,14 +7,18 @@ Sinon and Chai for quality assurance.
 ## Backend
 ### Express 
 Express framework is used on the back-end server to create an API. 
+
 URL Link: https://expressjs.com/
+
 Reference Links: [
 	https://expressjs.com/en/4x/api.html
 ]
 
 ### SQLite
 SQLite3 is the included database and you can swap it out when you are looking to scale.
+
 URL Link: https://www.sqlite.org/
+
 Reference Links: [
 	https://github.com/mapbox/node-sqlite3/wiki/API
 ]
