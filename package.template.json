@@ -14,9 +14,6 @@
     "Starter",
     "Seed"
   ],
-  "install": [
-	  "bin/setup"
-  ],
   "author": "Joseph Matthias Goh <joseph-at-joeir-dot-net>",
   "license": "MIT",
   "devDependencies": {
