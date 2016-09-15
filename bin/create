@@ -6,19 +6,22 @@ MKREACT_PATH=$NODE_PATH/lib/node_modules/mkreact
 if [ -d $FILE ]
 then
     echo $MKREACT_PATH 'exists. \nProceeding to install mkreact seed project...'
-    echo '\tInstalling assets...'
+    echo '\tInstalling assets directory...'
     cp -rf $MKREACT_PATH/assets         			`pwd`/assets
-    echo '\tInstalling scripts...'
+    echo '\tInstalling scripts directory...'
     cp -rf $MKREACT_PATH/bin            			`pwd`/bin
-    echo '\tInstalling demo...'
+	rm `pwd`/bin/create
+	rm `pwd`/bin/setup
+	rm `pwd`/bin/teardown
+    echo '\tInstalling demo directory...'
     cp -rf $MKREACT_PATH/components    			 	`pwd`/components
-    echo '\tInstalling configurations...'
+    echo '\tInstalling configurations directory...'
     cp -rf $MKREACT_PATH/configurations 			`pwd`/configurations
-    echo '\tInstalling karma configuration...'
-    cp $MKREACT_PATH/karma.conf.js      			`pwd`
-    echo '\tInstalling npm package information...'
+	echo '\tInstalling npm package information...'
     cp $MKREACT_PATH/package.template.json       	`pwd`
 	mv `pwd`/package.template.json `pwd`/package.json
+    echo '\tInstalling karma configuration...'
+    cp $MKREACT_PATH/karma.conf.js      			`pwd`
     echo '\tInstalling webpack configuration...'
     cp $MKREACT_PATH/webpack.config.js  			`pwd`
     echo '\tInstalling server.js...'
@@ -26,12 +29,24 @@ then
     echo '\tSetting commonly ignored files in .gitignore...'
     touch `pwd`/.gitignore
     echo 'node_modules\nnode_modules/*\nnode_modules/**\nnpm-debug.log' > `pwd`/.gitignore
-    echo 'Done.\n\n'
+    echo 'Done.\n'
     echo 'Install npm components as follows:'
-    echo '\n\tProduction  : npm install'
+    echo '\tProduction  : npm install'
     echo '\tDevelopment : npm install --development'
-    echo 'Run mkreact with:'
-    echo '\n\tnpm start'
+	echo '\n'
+    echo 'Start mkreact for production:'
+    echo '\n\tnpm start --production'
+	echo '\n'
+	echo 'Start mkreact for development (you probably want this):'
+    echo '\n\tnpm start --development'
+	echo '\n'
+	echo 'Run tests with:'
+    echo '\n\tnpm test'
+	echo '\n'
+	echo 'Build your project before deployment with:'
+    echo '\n\tnpm build'
+	echo '\n'
+	echo 'See the README.md for more information and have fun!'
 else
     echo $MKREACT_PATH 'does not exist. Check your installation of mkreact or install via:\n'
     echo '\t npm install mkreact -g'
