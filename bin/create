@@ -1,0 +1,37 @@
+#!/bin/sh
+echo 'Getting NPM paths...'
+NODE_PATH=`npm config get prefix`
+echo 'NPM is located at' $NODE_PATH
+MKREACT_PATH=$NODE_PATH/lib/node_modules/mkreact
+if [ -d $FILE ]
+then
+    echo $MKREACT_PATH 'exists. \nProceeding to install mkreact seed project...'
+    echo '\tInstalling assets...'
+    cp -rf $MKREACT_PATH/assets         `pwd`/assets
+    echo '\tInstalling scripts...'
+    cp -rf $MKREACT_PATH/bin            `pwd`/bin
+    echo '\tInstalling demo...'
+    cp -rf $MKREACT_PATH/components     `pwd`/components
+    echo '\tInstalling configurations...'
+    cp -rf $MKREACT_PATH/configurations `pwd`/configurations
+    echo '\tInstalling karma configuration...'
+    cp $MKREACT_PATH/karma.conf.js      `pwd`
+    echo '\tInstalling npm package information...'
+    cp $MKREACT_PATH/package.json       `pwd`
+    echo '\tInstalling webpack configuration...'
+    cp $MKREACT_PATH/webpack.config.js  `pwd`
+    echo '\tInstalling server.js...'
+    cp $MKREACT_PATH/server.js          `pwd`
+    echo '\tSetting commonly ignored files in .gitignore...'
+    touch `pwd`/.gitignore
+    echo 'node_modules\nnode_modules/*\nnode_modules/**\nnpm-debug.log' > `pwd`/.gitignore
+    echo 'Done.\n\n'
+    echo 'Install npm components as follows:'
+    echo '\n\tProduction  : npm install'
+    echo '\tDevelopment : npm install --development'
+    echo 'Run mkreact with:'
+    echo '\n\tnpm start'
+else
+    echo $MKREACT_PATH 'does not exist. Check your installation of mkreact or install via:\n'
+    echo '\t npm install mkreact -g'
+fi

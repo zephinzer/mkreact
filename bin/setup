@@ -1,2 +1,3 @@
 #!/bin/sh
-pwd
+cp bin/create /usr/local/bin/mkreact
+chmod +x /usr/local/bin/mkreact
