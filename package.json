@@ -14,7 +14,7 @@
     "Starter",
     "Seed"
   ],
-  "install": [
+  "postinstall": [
 	  "bin/setup"
   ],
   "postuninstall": [
