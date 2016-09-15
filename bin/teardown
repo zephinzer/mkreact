@@ -1,0 +1,3 @@
+#!/bin/sh
+chmod -x /usr/local/bin/mkreact
+rm -f /usr/local/bin/mkreact

@@ -7,21 +7,22 @@ if [ -d $FILE ]
 then
     echo $MKREACT_PATH 'exists. \nProceeding to install mkreact seed project...'
     echo '\tInstalling assets...'
-    cp -rf $MKREACT_PATH/assets         `pwd`/assets
+    cp -rf $MKREACT_PATH/assets         			`pwd`/assets
     echo '\tInstalling scripts...'
-    cp -rf $MKREACT_PATH/bin            `pwd`/bin
+    cp -rf $MKREACT_PATH/bin            			`pwd`/bin
     echo '\tInstalling demo...'
-    cp -rf $MKREACT_PATH/components     `pwd`/components
+    cp -rf $MKREACT_PATH/components    			 	`pwd`/components
     echo '\tInstalling configurations...'
-    cp -rf $MKREACT_PATH/configurations `pwd`/configurations
+    cp -rf $MKREACT_PATH/configurations 			`pwd`/configurations
     echo '\tInstalling karma configuration...'
-    cp $MKREACT_PATH/karma.conf.js      `pwd`
+    cp $MKREACT_PATH/karma.conf.js      			`pwd`
     echo '\tInstalling npm package information...'
-    cp $MKREACT_PATH/package.json       `pwd`
+    cp $MKREACT_PATH/package.template.json       	`pwd`
+	mv `pwd`/package.template.json `pwd`/package.json
     echo '\tInstalling webpack configuration...'
-    cp $MKREACT_PATH/webpack.config.js  `pwd`
+    cp $MKREACT_PATH/webpack.config.js  			`pwd`
     echo '\tInstalling server.js...'
-    cp $MKREACT_PATH/server.js          `pwd`
+    cp $MKREACT_PATH/server.js          			`pwd`
     echo '\tSetting commonly ignored files in .gitignore...'
     touch `pwd`/.gitignore
     echo 'node_modules\nnode_modules/*\nnode_modules/**\nnpm-debug.log' > `pwd`/.gitignore
