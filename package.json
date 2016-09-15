@@ -1,9 +1,10 @@
 {
   "name": "mkreact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Starter package for writing an ES6 React app using Material-UI, Redux, Babel, Webpack and Express.",
   "main": "index.js",
   "scripts": {
+	"make": "bin/make",
 	"build": "bin/build",
     "start": "bin/start",
     "test": "bin/test"
@@ -12,6 +13,9 @@
     "React",
     "Starter",
     "Seed"
+  ],
+  "install": [
+	  "bin/setup"
   ],
   "author": "Joseph Matthias Goh <joseph-at-joeir-dot-net>",
   "license": "MIT",
