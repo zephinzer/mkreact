@@ -1,6 +1,6 @@
 {
   "name": "mkreact",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Starter package for writing an ES6 React app using Material-UI, Redux, Babel, Webpack and Express.",
   "main": "index.js",
   "scripts": {
