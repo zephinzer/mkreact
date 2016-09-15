@@ -1,6 +1,6 @@
 {
-  "name": "mkreact",
-  "version": "1.0.3",
+  "name": "mkreact-seed-change-me",
+  "version": "1.0.0",
   "description": "Starter package for writing an ES6 React app using Material-UI, Redux, Babel, Webpack and Express.",
   "main": "server.js",
   "scripts": {
@@ -12,9 +12,13 @@
   "keywords": [
     "React",
     "Starter",
-    "Seed"
+    "Seed",
+	"MaterialUI",
+	"Redux",
+	"Enzyme",
+	"Mocha"
   ],
-  "author": "Joseph Matthias Goh <joseph-at-joeir-dot-net>",
+  "author": "Your Name <your-email-at-your-domain-dot-com>",
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.5.2",
